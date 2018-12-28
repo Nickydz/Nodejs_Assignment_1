@@ -10,6 +10,7 @@
 var http = require('http');
 const url = require('url');
 const StringDecoder = require('string_decoder').StringDecoder;
+var config = require('./config');
 
 
 // Create server
@@ -71,7 +72,7 @@ var server = http.createServer(function(req,res){
 
       // Set Content Type in header
       res.setHeader('Content-Type','application/json')
-      
+
       // Set status Code in response header
       res.writeHead(statusCode)
 
@@ -86,8 +87,8 @@ var server = http.createServer(function(req,res){
 
 
 //Listen on server
-server.listen(3000,function(){
-  console.log("Listening on port ");
+server.listen(config.port,function(){
+  console.log("Listening on port "+config.port +" on "+config.envName+" mode");
 })
 
 // Defining the handlers
