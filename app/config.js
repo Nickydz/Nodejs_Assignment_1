@@ -10,18 +10,20 @@ var environments ={};
 
 // Staging environment
 environments.development ={
-  'port' : 3000,
+  'httpPort' : 3000,
+  'httpsPort' : 3001,
   'envName': 'Development'
 }
 
 // Production environment
 environments.production ={
-  'port' : 5000,
+  'httpPort' : 5000,
+  'httpsPort' : 5001,
   'envName': 'Production'
 }
 
 
-// Determine the current environment passed from command line
+// Determine the current environment passed from command linez
 var curEnv = typeof(process.env.NODE_ENV) == 'string' ? process.env.NODE_ENV.toLowerCase() : '';
 
 // Check if current env exists or default to development
