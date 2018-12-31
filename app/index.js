@@ -8,7 +8,7 @@
 */
 
 var http = require('http');
-var https = require('https');
+var https = require('https'); 
 const url = require('url');
 const StringDecoder = require('string_decoder').StringDecoder;
 var config = require('./config');
